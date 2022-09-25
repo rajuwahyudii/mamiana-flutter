@@ -1,4 +1,4 @@
-package com.example.mamiana
+package com.techdeveloper.mamiana
 
 import io.flutter.embedding.android.FlutterActivity
 

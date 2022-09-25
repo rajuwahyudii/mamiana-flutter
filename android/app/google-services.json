@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "804799911892",
+    "project_id": "mamiana2-7443e",
+    "storage_bucket": "mamiana2-7443e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804799911892:android:280f8583519bf378d12841",
+        "android_client_info": {
+          "package_name": "com.techdeveloper.mamiana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804799911892-hl6eht0ilv0lqh76rs7revg09lc5sja3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe84vN7PPVx3bpeHqypc7fsL6Z65CsE4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804799911892-hl6eht0ilv0lqh76rs7revg09lc5sja3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

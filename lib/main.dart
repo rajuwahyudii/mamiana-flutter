@@ -1,12 +1,16 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mamiana/pages/auth/login.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mamiana/pages/auth/register.dart';
+import 'package:mamiana/pages/splashscreen.dart';
 import 'package:mamiana/pages/wrapper.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: "mamaina.env");
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -17,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: SplashScreen(),
     );
   }
 }
