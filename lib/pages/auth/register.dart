@@ -1,5 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:mamiana/pages/auth/login.dart';
+import 'package:mamiana/pages/wrapper.dart';
 import 'package:mamiana/services/services.dart';
 import 'package:mamiana/theme/color.dart';
 import 'package:mamiana/theme/textstyle.dart';
@@ -86,13 +89,36 @@ class _RegisterState extends State<Register> {
               ),
               CustomButtonWidget(
                 text: 'Register',
-                press: () {
-                  Services.signUp(
-                    nomorHPController.text,
-                    passwordController.text,
-                    namaController.text,
-                  );
-                },
+                press: passwordController.text ==
+                        konfirmasipasswordController.text
+                    ? () async {
+                        await Services.signUp(
+                          nomorHPController.text,
+                          passwordController.text,
+                          namaController.text,
+                        ).then(
+                          (value) => ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(value != null
+                                  ? "Register Berhasil"
+                                  : "Register Gagal"),
+                            ),
+                          ),
+                        );
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Wrapper(),
+                          ),
+                        );
+                      }
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("password tidak sesuai"),
+                          ),
+                        );
+                      },
                 buttonColor: Colors.white,
                 textColor: Colors.black,
               ),

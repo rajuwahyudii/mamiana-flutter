@@ -16,7 +16,10 @@ class _MenuPagesState extends State<MenuPages> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.abc),
+          icon: const Icon(
+            Icons.abc,
+            color: Colors.white,
+          ),
           onPressed: () {
             Services.signOut();
           },
