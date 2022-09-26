@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, body_might_complete_normally_nullable
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,6 +9,26 @@ class Services {
   static FirebaseAuth auth = FirebaseAuth.instance;
   static User user = auth.currentUser!;
 
+  // Login
+  static Future<User?> signIn(String nomorhp, String password) async {
+    try {
+      UserCredential result = await auth.signInWithEmailAndPassword(
+          email: '$nomorhp@mamiana.com', password: password);
+      User? firebaseUser = result.user;
+      return firebaseUser;
+    } catch (e) {
+      print('e');
+    }
+  }
+
+// Logout
+  static Future<User?> signOut() async {
+    await auth.signOut();
+  }
+
+  static Stream<User?> get FirebaseUserStream => auth.authStateChanges();
+
+  //register
   static Future<User?> signUp(
       String nomorhp, String password, String nama) async {
     try {
@@ -18,7 +38,7 @@ class Services {
       final encrypter = Encrypter(AES(key));
       FirebaseAuth auth = FirebaseAuth.instance;
       UserCredential result = await auth.createUserWithEmailAndPassword(
-          email: '$nomorhp@mamaina.com', password: password);
+          email: '$nomorhp@mamiana.com', password: password);
       User idreg = auth.currentUser!;
 
       User? firebaseUser = result.user;

@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:mamiana/pages/auth/register.dart';
+import 'package:mamiana/pages/wrapper.dart';
+import 'package:mamiana/services/services.dart';
 import 'package:mamiana/theme/color.dart';
 import 'package:mamiana/theme/textstyle.dart';
 import 'package:mamiana/widget/button_custom.dart';
@@ -51,7 +53,24 @@ class _LoginState extends State<Login> {
                   }),
               CustomButtonWidget(
                 text: 'Login',
-                press: () {},
+                press: () async {
+                  await Services.signIn(
+                          nomorHPController.text, passwordController.text)
+                      .then(
+                    (value) => ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            value != null ? "Login Berhasil" : "Login Gagal"),
+                      ),
+                    ),
+                  );
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) => Wrapper()),
+                    ),
+                  );
+                },
                 buttonColor: Colors.white,
                 textColor: Colors.black,
               ),
