@@ -1,5 +1,9 @@
 // ignore_for_file: avoid_print, body_might_complete_normally_nullable
 
+import 'dart:io';
+
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:encrypt/encrypt.dart';
@@ -64,5 +68,14 @@ class Services {
     } catch (e) {
       print(e.toString());
     }
+  }
+
+  static Future<String> uploadImage(File imageFile) async {
+    String fileName = basename(imageFile.path);
+    Reference ref = FirebaseStorage.instance.ref().child(fileName);
+    UploadTask task = ref.putFile(imageFile);
+    TaskSnapshot snapshot = await task;
+
+    return await snapshot.ref.getDownloadURL();
   }
 }
