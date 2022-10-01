@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
                   isPassword: true,
                   obsuretext: password,
                   controller: passwordController,
-                  keyboard: TextInputType.number,
+                  keyboard: TextInputType.name,
                   label: 'Kata Sandi',
                   visibility: () {
                     setState(() {

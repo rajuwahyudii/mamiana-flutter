@@ -7,7 +7,6 @@ import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:encrypt/encrypt.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Services {
   static FirebaseAuth auth = FirebaseAuth.instance;
@@ -55,6 +54,7 @@ class Services {
             "nama": nama,
             "email": '$nomorhp@gmail.com',
             'nomorhp': nomorhp,
+            "hari": 1,
             "password": encrypter.encrypt(password, iv: iv).base64,
             "createdAt": DateTime.now()
           })
@@ -64,18 +64,49 @@ class Services {
           .catchError(
             (error) => print('User gagal ditambahkan $error'),
           );
+      for (int i = 1; i < 31; i++) {
+        await FirebaseFirestore.instance
+            .collection("user")
+            .doc(idreg.uid)
+            .collection("day")
+            .doc("day$i")
+            .set({
+          "url": "",
+          "status": "belum",
+        });
+      }
       return firebaseUser;
     } catch (e) {
       print(e.toString());
     }
   }
 
-  static Future<String> uploadImage(File imageFile) async {
-    String fileName = basename(imageFile.path);
+  static Future<String> uploadImage(String id, File imageFile, int day) async {
+    String fileName = basename("$id-day$day");
     Reference ref = FirebaseStorage.instance.ref().child(fileName);
     UploadTask task = ref.putFile(imageFile);
     TaskSnapshot snapshot = await task;
 
     return await snapshot.ref.getDownloadURL();
+  }
+
+  static Future<User?> saveUrl(
+    int index,
+    String url,
+  ) async {
+    User idreg = auth.currentUser!;
+    try {
+      await FirebaseFirestore.instance
+          .collection('user')
+          .doc(idreg.uid)
+          .collection("day")
+          .doc("day$index")
+          .update({
+        'url': url,
+        'status': 'sudah',
+      });
+    } catch (e) {
+      print(e);
+    }
   }
 }
