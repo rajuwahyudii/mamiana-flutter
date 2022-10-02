@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:mamiana/pages/wrapper.dart';
 import 'package:mamiana/theme/color.dart';
 import 'package:mamiana/theme/textstyle.dart';
-import 'auth/login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

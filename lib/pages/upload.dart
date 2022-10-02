@@ -81,8 +81,8 @@ class _UploadState extends State<Upload> {
                           ),
                           (data["url"] != null)
                               ? Container(
-                                  width: 200,
-                                  height: 200,
+                                  width: size.width * 0.7,
+                                  height: size.height * 0.4,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
@@ -95,8 +95,8 @@ class _UploadState extends State<Upload> {
                                   ),
                                 )
                               : Container(
-                                  width: 300,
-                                  height: 300,
+                                  width: size.width * 0.7,
+                                  height: size.height * 0.4,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
