@@ -1,16 +1,29 @@
-# mamiana
+# Aplikasi Mamiana
 
-A new Flutter project.
+aplikasi pengingat dan pelaporan jadwal minum obat tiap pasien setiap jam 20:00, dan melaporkan minum obat dengan swafoto dalam aplikasi
 
-## Getting Started
+<br>
+Teknologi yang digunakan
+<br>
+<br>
+<a href="https://dart.dev/">
+    <img src="https://skillicons.dev/icons?i=dart" width=50"/>
+  </a>
+  
+  <a href="https://dart.dev/">
+    <img src="https://skillicons.dev/icons?i=flutter" width=50"/>
+  </a>
+  
+  <a href="https://dart.dev/">
+    <img src="https://skillicons.dev/icons?i=firebase" width=50"/>
+  </a>
+  
+<br>
+<br>
+<br>
+<br>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Berikut UI dari aplikasi ini : 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Belum selesai
