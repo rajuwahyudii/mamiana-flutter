@@ -104,6 +104,11 @@ class _RegisterState extends State<Register> {
                                 nomorHPController.text,
                                 passwordController.text,
                                 namaController.text,
+                                nomorHPController.text.substring(
+                                    nomorHPController.text.length != 0 ? 1 : 0,
+                                    nomorHPController.text.length != 0
+                                        ? nomorHPController.text.length
+                                        : 0),
                               ).then(
                                 (value) =>
                                     ScaffoldMessenger.of(context).showSnackBar(

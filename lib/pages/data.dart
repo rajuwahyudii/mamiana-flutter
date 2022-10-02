@@ -107,12 +107,18 @@ class _DataPagesState extends State<DataPages> {
                                       padding: const EdgeInsets.all(17),
                                       child: Text(
                                         data["status"] == "sudah"
-                                            ? "status : Laporan Berhasil"
-                                            : "status : anda tidak mengirimkan foto",
+                                            ? "status : Pasien Mengirimkan Foto"
+                                            : data["status"] == 'belum'
+                                                ? "status : Pasien Belum Mengirimkan Foto"
+                                                : "status : Pasien Tidak Mengirimkan Foto",
                                         style: GoogleFonts.poppins(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            color: signedColor),
+                                            color: data["status"] == "sudah"
+                                                ? signedColor
+                                                : data["status"] == 'belum'
+                                                    ? notTodayColor
+                                                    : unsignedColor),
                                       ),
                                     )
                                   ],

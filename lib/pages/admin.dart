@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mamiana/pages/menu.dart';
+import 'package:mamiana/pages/home.dart';
 import 'package:mamiana/pages/report.dart';
 
 class AdminPage extends StatefulWidget {
-  AdminPage({Key? key}) : super(key: key);
+  const AdminPage({Key? key}) : super(key: key);
 
   @override
   State<AdminPage> createState() => _AdminPageState();
@@ -17,6 +17,19 @@ class _AdminPageState extends State<AdminPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomePage(),
+              ),
+            );
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+          ),
+        ),
         title: const Text("Admin"),
         centerTitle: true,
       ),
@@ -53,7 +66,7 @@ class _AdminPageState extends State<AdminPage> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(
                             17,
                           ),

@@ -87,7 +87,7 @@ class _MenuPagesState extends State<MenuPages> {
                               : ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                        "Jadwal minum obat ${data["hari"]} dari 30 hari"),
+                                        "Anda masih di hari ke ${data["hari"]} dalam minum obat"),
                                   ),
                                 );
                         },
@@ -104,7 +104,7 @@ class _MenuPagesState extends State<MenuPages> {
                           ),
                           child: Center(
                             child: Text(
-                              'Hari ke -$day',
+                              'Hari ke $day',
                               style: GoogleFonts.poppins(
                                   fontSize: 17, color: Colors.white),
                             ),

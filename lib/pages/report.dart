@@ -67,14 +67,16 @@ class _ReportState extends State<Report> {
                           width: size.width * 0.3,
                           height: size.height * 0.15,
                           decoration: BoxDecoration(
-                            color: signedColor,
+                            color: data["hari"] >= day
+                                ? signedColor
+                                : notTodayColor,
                             borderRadius: BorderRadius.circular(
                               17,
                             ),
                           ),
                           child: Center(
                             child: Text(
-                              'Hari ke -$day',
+                              'Hari ke $day',
                               style: GoogleFonts.poppins(
                                   fontSize: 17, color: Colors.white),
                             ),
@@ -86,7 +88,6 @@ class _ReportState extends State<Report> {
                 ),
               ),
             );
-            ;
           }
           return Scaffold();
         });

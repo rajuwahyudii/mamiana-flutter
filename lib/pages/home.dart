@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +17,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
-    FirebaseAuth auth = FirebaseAuth.instance;
     User user = auth.currentUser!;
     CollectionReference collectionRef =
         FirebaseFirestore.instance.collection('user');
@@ -32,7 +34,7 @@ class _HomePageState extends State<HomePage> {
           return Scaffold(
             appBar: AppBar(
               actions: [
-                data["role"] == "user"
+                data["role"] == "admin"
                     ? IconButton(
                         onPressed: () {
                           Navigator.push(
@@ -57,10 +59,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   );
-                  Navigator.pushReplacement(
+                  await Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Wrapper(),
+                      builder: (context) => const Wrapper(),
                     ),
                   );
                 },
@@ -94,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            "Minum Obat Hari Ke : -${data["hari"]}",
+                            "Minum Obat Hari Ke : ${data["hari"]}",
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,

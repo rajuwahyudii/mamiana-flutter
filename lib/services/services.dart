@@ -33,7 +33,7 @@ class Services {
 
   //register
   static Future<User?> signUp(
-      String nomorhp, String password, String nama) async {
+      String nomorhp, String password, String nama, String nohp2) async {
     try {
       final key = Key.fromLength(32);
       final iv = IV.fromLength(16);
@@ -53,7 +53,7 @@ class Services {
             "role": "user",
             "nama": nama,
             "email": '$nomorhp@gmail.com',
-            'nomorhp': nomorhp,
+            'nomorhp': "+62$nohp2",
             "hari": 1,
             "password": encrypter.encrypt(password, iv: iv).base64,
             "createdAt": DateTime.now()
