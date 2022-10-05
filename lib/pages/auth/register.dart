@@ -38,6 +38,13 @@ class _RegisterState extends State<Register> {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Image.asset(
+                      "assets/images/login.png",
+                      width: 250,
+                    ),
                     TextFieldCustomWidget(
                       isPassword: false,
                       visibility: () {},

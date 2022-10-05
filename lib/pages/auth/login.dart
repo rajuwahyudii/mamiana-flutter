@@ -32,6 +32,13 @@ class _LoginState extends State<Login> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Image.asset(
+                "assets/images/register.png",
+                width: 250,
+              ),
               TextFieldCustomWidget(
                 isPassword: false,
                 obsuretext: false,

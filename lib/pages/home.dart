@@ -81,7 +81,14 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    Container(
+                    Image.asset(
+                      "assets/images/waiting.png",
+                      width: 200,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
                       width: size.width * 0.9,
                       height: size.height * 0.1,
                       child: Column(

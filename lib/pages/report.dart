@@ -43,7 +43,10 @@ class _ReportState extends State<Report> {
                     Icons.arrow_back,
                   ),
                 ),
-                title: const Text("Laporan"),
+                title: Text(
+                  "Laporan \n${data["nama"]}",
+                  textAlign: TextAlign.center,
+                ),
                 centerTitle: true,
               ),
               body: SafeArea(

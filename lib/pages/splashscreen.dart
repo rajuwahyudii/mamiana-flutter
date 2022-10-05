@@ -41,10 +41,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            // Image.asset(
-            //   'assets/images/splash.png',
-            //   width: 341.54,
-            // ),
+            Image.asset(
+              'assets/images/splash2.png',
+              width: 300,
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 10,
             ),
             Text(
-              'APLIKASI PENGETAHUAN STUNTING',
+              'Mitra Ibu Hamil Anemia',
               textAlign: TextAlign.center,
               style: splash2TextStyle,
               textScaleFactor: 1,

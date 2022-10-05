@@ -30,7 +30,7 @@ class _AdminPageState extends State<AdminPage> {
             Icons.arrow_back,
           ),
         ),
-        title: const Text("Admin"),
+        title: const Text("Daftar Pasien"),
         centerTitle: true,
       ),
       body: StreamBuilder<QuerySnapshot>(
