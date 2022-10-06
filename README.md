@@ -26,4 +26,12 @@ Teknologi yang digunakan
 
 Berikut UI dari aplikasi ini : 
 
-Belum selesai
+<div align = center>
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037753.png" width="230">
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037868.png" width="230">
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037875.png" width="230">
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037885.png" width="230">
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037889.png" width="230">
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037895.png" width="230">
+<img src="https://github.com/rajuwahyudii/mamiana-flutter/blob/main/Screenshot_1665037902.png" width="230">
+</div>
